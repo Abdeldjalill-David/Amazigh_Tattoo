@@ -1,12 +1,9 @@
 
-
-# Amazigh_Tattoo
-
 <p align="center">
-  <img src="https://github.com/Abdeldjalill-David/Amazigh_Tattoo//blob/main/banner.jpg?raw=true" alt="Project Banner" width="800"/>
+  <img src="https://github.com/Abdeldjalill-David/Amazigh_Tattoo//blob/main/banner-3.jpg?raw=true" alt="Project Banner" width="800"/>
 </p>
 
-<h1 align="center">Project Title</h1>
+<h1 align="center">Amazigh_Tattoo</h1>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
@@ -17,12 +14,13 @@
 [![Kaggle](https://img.shields.io/badge/Kaggle-Notebook-blue)](https://www.kaggle.com/code/torpidoff/amazigh-tattoo/edit)
 
 ## Overview
-Brief description of what this project does and the problem it solves.
+A minimal, non-SFT (Supervised Fine-Tuning) generative program that creates high-resolution Amazigh (Berber) tattoos , Built for researchers, artists, and cultural preservationists interested in computational ethnography and generative art.
 
 ## Features
-- Key feature 1
-- Key feature 2
-- Key feature 3
+- High-Resolution Tattoo Synthesis –
+- Generates detailed, scalable Amazigh geometric patterns suitable for professional tattoo application
+Cultural Authenticity Engine
+ –Programmatically encodes traditional Berber symbology (fibulae, protective diamonds, tribal motifs) without dataset bias
 
 ## Installation
 
