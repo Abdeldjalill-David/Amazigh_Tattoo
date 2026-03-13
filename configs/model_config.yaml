@@ -1,0 +1,47 @@
+# Optimized for 24GB VRAM (RTX 3090/4090/A5000)
+model:
+  base_model: "runwayml/stable-diffusion-v1-5"
+  # Alternative high-quality base:
+  # base_model: "SG161222/Realistic_Vision_V5.1_noVAE"
+  
+  # VRAM Optimization Settings
+  vram:
+    total_gb: 24
+    mixed_precision: "fp16"           # fp16 for speed, bf16 for stability
+    gradient_checkpointing: true      # Trade compute for memory
+    xformers: true                  # Memory-efficient attention
+    vae_slicing: true               # For large images
+    vae_tiling: true                # For very large images
+    cpu_offload: false              # Keep on GPU (you have 24GB!)
+  
+  # LoRA Training Config
+  lora:
+    rank: 64                        # Higher rank = more capacity (32-128)
+    alpha: 64                       # Usually equal to rank
+    target_modules:
+      - "q_proj"
+      - "v_proj"
+      - "k_proj"
+      - "out_proj"
+      - "fc1"
+      - "fc2"
+    dropout: 0.05
+    bias: "none"
+    
+  # Training Hyperparameters
+  training:
+    batch_size: 4                   # Can increase with 24GB
+    gradient_accumulation_steps: 4  # Effective batch = 16
+    num_epochs: 100
+    learning_rate: 1.0e-4
+    warmup_steps: 100
+    save_steps: 500
+    max_grad_norm: 1.0
+    resolution: 512                 # Training resolution
+    
+  # Advanced Features
+  features:
+    use_8bit_adam: false            # Keep false for 24GB
+    use_dadaptation: false          # Experimental optimizer
+    train_text_encoder: true        # Fine-tune text encoder too
+    with_prior_preservation: false  # For DreamBooth style
